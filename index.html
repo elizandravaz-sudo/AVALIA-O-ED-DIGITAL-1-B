@@ -1,1 +1,69 @@
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batman: O Cavaleiro das Trevas | Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="accessibility-bar" role="complementary">
+        <button id="increase-font" aria-label="Aumentar fonte">A+</button>
+        <button id="decrease-font" aria-label="Diminuir fonte">A-</button>
+        <button id="toggle-contrast" aria-label="Alternar alto contraste">Contraste</button>
+    </div>
+
+    <header>
+        <nav class="container">
+            <div class="logo">BATMAN</div>
+            <ul>
+                <li><a href="#herois">Equipe</a></li>
+                <li><a href="#viloes">Vilões</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero reveal">
+            <div class="container">
+                <h1>Justiça sob as Sombras</h1>
+                <p>Protegendo Gotham City com tecnologia, inteligência e medo.</p>
+            </div>
+        </section>
+
+        <section id="herois" class="section container reveal">
+            <h2>Aliados de Gotham</h2>
+            <div id="grid-aliados" class="grid-container">
+                </div>
+        </section>
+
+        <section id="viloes" class="section reveal">
+            <div class="container">
+                <h2>Galeria de Vilões</h2>
+                <div class="carousel" role="region" aria-label="Carrossel de Vilões">
+                    <div id="carousel-track" class="carousel-track">
+                        </div>
+                    <div class="carousel-controls">
+                        <button id="prev" aria-label="Anterior">❮</button>
+                        <button id="next" aria-label="Próximo">❯</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section container reveal">
+            <h2>Perguntas Frequentes</h2>
+            <div id="faq-container">
+                </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2023 Wayne Enterprises. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
