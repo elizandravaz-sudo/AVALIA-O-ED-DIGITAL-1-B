@@ -1,1 +1,89 @@
 
+/* =========================================
+   VARIÁVEIS E CONFIGURAÇÃO
+   ========================================= */
+:root {
+    --primary: #f5c518; /* Amarelo Batman */
+    --bg-dark: #1a1a1a;
+    --bg-card: #2d2d2d;
+    --text-light: #ffffff;
+    --text-muted: #cccccc;
+    --radius: 8px;
+    --transition: 0.4s ease;
+    --font-base: 16px;
+}
+
+/* MODO ALTO CONTRASTE */
+body.high-contrast {
+    --primary: #ffff00;
+    --bg-dark: #000000;
+    --bg-card: #000000;
+    --text-light: #ffffff;
+    --border-hc: 2px solid #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: var(--font-base); scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* =========================================
+   LAYOUT (MOBILE FIRST)
+   ========================================= */
+.grid-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* 1 coluna no mobile */
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
+    }
+}
+
+/* =========================================
+   COMPONENTES
+   ========================================= */
+header { padding: 20px 0; border-bottom: 1px solid var(--bg-card); }
+
+.card {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: var(--radius);
+    transition: transform var(--transition);
+    border: var(--border-hc);
+}
+
+.card:hover { transform: translateY(-10px); }
+
+/* Carrossel Simples */
+.carousel { position: relative; overflow: hidden; }
+.carousel-track { display: flex; transition: transform 0.5s ease; }
+.carousel-item { min-width: 100%; padding: 40px; text-align: center; }
+
+/* FAQ Acordeão */
+.accordion-item { border-bottom: 1px solid var(--bg-card); }
+.accordion-header {
+    width: 100%; padding: 15px; text-align: left;
+    background: none; color: var(--primary); border: none;
+    cursor: pointer; font-weight: bold;
+}
+.accordion-content { padding: 0 15px; display: none; color: var(--text-muted); }
+.accordion-content.active { display: block; padding-bottom: 15px; }
+
+/* Animação Scroll Reveal */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Barra Acessibilidade */
+.accessibility-bar { position: fixed; top: 10px; right: 10px; z-index: 1000; }
+button { cursor: pointer; padding: 5px 10px; margin-left: 5px; }
